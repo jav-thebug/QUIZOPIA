@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizopia</title>
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .rectangle-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .rectangle {
+            width: 100%;
+            height: 70px;
+            background-color: rgba(255, 224, 241, 0.888);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 6px 3px rgba(106, 105, 105, 0.5);
+            position: relative;
+        }
+
+        .rectangle-two, .rectangle-three, .rectangle-four {
+            width: 25%;
+            height: 60px;
+            background-color: rgba(255, 192, 209, 255);
+            box-shadow: 1px 1px 3px 1px rgba(74, 72, 72, 0.5);
+            margin-left: 620px;
+            position: absolute;
+        }
+
+        .rectangle-two {
+            margin-top: -300px;
+        }
+
+        .rectangle-three {
+            margin-top: -340px;
+            margin-bottom: 600px;
+        }
+
+        .rectangle-four {
+            margin-top: -340px;
+            margin-bottom: 600px;
+        }
+
+        .rectangle-five {
+            width: 100%;
+            height: 30px;
+            background-color: rgb(253, 235, 245);
+            border: 4px solid rgb(220, 145, 181);
+            margin-top: -160px;
+            margin-bottom: -90px;
+        }
+
+        .logo {
+            width: 80%;
+            height: 350px;
+            margin-top: 10px;
+            margin-bottom: -20px;
+        }
+
+        .stars {
+            width: 140px;
+            height: 100px;
+            margin-left: 900px;
+            margin-top: 25px;
+        }
+
+        .hero {
+            width: 80%;
+            height: 570px;
+            border-radius: 15px;
+            margin-left: 170px;
+            margin-top: 40px;
+            box-shadow: 2px 2px 6px 3px rgba(56, 55, 55, 0.5);
+        }
+
+        .movies, .geo, .sci {
+            width: 110%;
+            height: 680px;
+            margin-left: 60px;
+            margin-bottom: 60px;
+            margin-top: -70px;
+        }
+
+        .geo {
+            margin-top: -200px;
+        }
+
+        .sci {
+            margin-top: -200px;
+            margin-bottom: 120px;
+        }
+
+        .text-overlay {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+            top: 0%;
+            left: 0%;
+            padding: 10px;
+        }
+
+        .button {
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            position: absolute;
+        }
+
+        .button-right {
+            margin-right: -30px;
+            margin-top: -10px;
+            margin-left: 1300px;
+            color: #e83d95;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .button-home {
+            margin-left: 1100px;
+            margin-top: -10px;
+            margin-right: 20px;
+            font-size: 30px;
+            color:#e83d95 ;
+            font-weight: bold;
+        }
+
+        .lets-play, .play, .science {
+            font-size: 40px;
+            color: #030203;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+            padding: 15px 30px;
+            margin-top: -25px;
+            margin-left: 50px;
+        }
+
+        .instructions {
+            width: 80%;
+            height: 600px;
+            margin-left: 160px;
+            margin-top: 40px;
+            border: 4px solid #030203;
+            border-radius: 10px;
+            box-shadow: 2px 2px 6px 3px rgba(56, 55, 55, 0.5);
+        }
+
+        footer {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: #f3f3f3;
+        }
+
+        footer p {
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rectangle-container">
+        <div class="rectangle">
+            <img src="{{  url_for('static',  filename='logo.png')  }}" alt="logo" class="logo">
+            <div class="text-overlay">
+                <a href="LOGOUT.html" class="button button-right">LOG OUT</a>
+                <a href="sign out.html" class="button button-home">SIGN OUT</a>
+            </div>
+        </div>
+    </div>
+
+    <img src="{{  url_for('static',   filename='Pink and White Cute Retro Trivia Quiz Presentation.jpg')  }}" alt="hero" class="hero">
+    <img src="{{   url_for('static',  filename='instructions.PNG')  }}" alt="instructions" class="instructions">
+
+    <div class="image-container">
+        <img src="{{  url_for('static',  filename='movies.png')  }}" alt="movies" class="movies">
+        <div class="rectangle rectangle-two">
+            <div class="text-overlay">
+                <a href="{{ url_for('movies') }}" class="lets-play">Let's Play</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="{{  url_for('static',  filename='geo.png')  }}" alt="geo" class="geo">
+        <div class="rectangle rectangle-three">
+            <div class="text-overlay">
+                <a href="{{ url_for('geo') }}" class="play">Let's play</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="{{  url_for('static',  filename='science.png')  }}" alt="sci" class="sci">
+        <div class="rectangle rectangle-four">
+            <div class="text-overlay">
+                <a href="{{ url_for('sci') }}" class="science">Let's play</a>
+               
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="rectangle rectangle-five">
+            <p>@ QUIZOPIA</p>
+        </div>
+    </footer>
+</body>
+
+</html>
